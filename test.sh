@@ -10,9 +10,14 @@ THEIRS='sh'
 
 checktest ()
 {
+	failed=0
 	if [[ "$real_out" != "$our_out" ]]
 	then
-		echo -e Test: '\e[36;1m'"$command"'\e[0m'
+		if [[ "$failed" = "0" ]]
+		then
+			echo -e Test: '\e[36;1m'"$command"'\e[0m'
+			failed=1
+		fi
 		echo Expected Output: "${#real_out} bytes"
 		echo -e '\e[32;1m'"$real_out"'\e[0m'
 		echo
@@ -21,7 +26,11 @@ checktest ()
 	fi
 	if [[ "$real_err" != "$our_err" ]]
 	then
-		echo -e Test: '\e[36;1m'"$command"'\e[0m'
+		if [[ "$failed" = "0" ]]
+		then
+			echo -e Test: '\e[36;1m'"$command"'\e[0m'
+			failed=1
+		fi
 		echo Expected Error: "${#real_err} bytes"
 		echo -e '\e[32;1m'"$real_err"'\e[0m'
 		echo
@@ -30,7 +39,11 @@ checktest ()
 	fi
 	if [[ "$real_status" != "$our_status" ]]
 	then
-		echo -e Test: '\e[36;1m'"$command"'\e[0m'
+		if [[ "$failed" = "0" ]]
+		then
+			echo -e Test: '\e[36;1m'"$command"'\e[0m'
+			failed=1
+		fi
 		echo -e Expected Status: '\e[32;1m'"$real_status"'\e[0m'
 		echo -e Actual Status: '\e[31;1m'"$our_status"'\e[0m'
 	fi
