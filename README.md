@@ -6,11 +6,11 @@ Each test case script starts with a shebang, the line `source test.sh`, then a n
 
 # To contribute
 ### Creating a new test file
-Create a new file named the task you are testing for. Like: `task0.02.sh` . Follow this naming convention: 
-task.number of the task.sh
+Create a new file named the task you are testing for. Like: `5_simple_shell.sh` . Follow this naming convention: 
+task number_name_of_task.sh
 
 So if you were writing a test for advanced task 9. Simple shell 0.4.1. The name of the file you create would be:
-`task0.4.1.sh`
+`9_simple_shell.sh`
 
 Make sure you make your file an executable before uploading it :)
 
