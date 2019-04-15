@@ -16,21 +16,4 @@ Make sure you make your file an executable before uploading it :)
 
 ### Writing the tests
 
-Follow this format:
-
-```
-#!/bin/bash
-
-source ./test.sh
-
-runtest '/bin/ls -l'
-runtest '/usr/bin/cal'
-runtest 'echo word1     word2'
-```
-
-Between the \` \` is where you type in your test to check. If you wanted to check if your shell handled the PATH variable, you would write something like:
-
-```
-runtest 'ls'
-runtest 'cal'
-```
+Follow the format in the [wiki](https://github.com/HermesBoots/simple_shell_tests/wiki/Writing-the-tests)
