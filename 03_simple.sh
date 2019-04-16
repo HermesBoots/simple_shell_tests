@@ -4,3 +4,4 @@ source ./test.sh
 
 runtest '/bin/ls -l'
 runtest '/bin/ls -a'
+runtest '/bin/ls'
