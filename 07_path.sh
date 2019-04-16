@@ -9,14 +9,17 @@ echo "I should print"
 echo "This too"
 EOF
 chmod +x temp.sh
-export PATH=$PATH:
+export PATH=:$PATH
 runtest 'temp.sh'
 
 runtest '/bin/notAthing'
 runtest '/usr/bin'
 
-chmod -x /usr/bin/cal
+touch ./cal
 runtest 'cal'
 runtest '/usr/bin/cal'
-chmod +x /usr/bin/cal
+rm ./cal ./temp.sh
 runtest 'cal'
+unset PATH
+runtest 'cal'
+runtest 'ls'
