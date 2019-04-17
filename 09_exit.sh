@@ -12,3 +12,8 @@ runtest 'exit +2147483647'
 runtest 'exit +2147483648'
 runtest 'exit 2147483647'
 runtest 'exit ++34'
+runtest 'exit 123123123123123123123123'
+runtest 'exit1'
+runtest 'exit +12+23'
+runtest 'exit 6.02214076e23' #avacado test
+runtest 'exit .7231'
